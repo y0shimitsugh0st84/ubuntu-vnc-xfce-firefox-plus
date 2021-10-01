@@ -113,7 +113,7 @@ COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 RUN \
     chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
-
+RUN apt install --install-recommends linux-generic-hwe-18.04 -y
 ### Switch to non-root user
 USER ${VNC_USER}
 
