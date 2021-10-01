@@ -115,7 +115,7 @@ RUN \
     && "${STARTUPDIR}"/set_user_permissions.sh "${STARTUPDIR}" "${HOME}"
 RUN apt update && apt install --install-recommends linux-generic-hwe-18.04 -y
 ### Switch to non-root user
-USER ${VNC_USER}
+USER 0
 
 ### Issue #7 (base): Mitigating problems with foreground mode
 WORKDIR ${STARTUPDIR}
